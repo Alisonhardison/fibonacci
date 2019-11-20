@@ -1,6 +1,9 @@
 def recursive_fib (n)
-  return n if n <= 1
-  recursive_fib(n-1) + recursive_fib(n-2)
+  if n < 2
+    return n
+  else
+    return recursive_fib(n-1) + recursive_fib(n-2)
+  end
 end
 
 puts recursive_fib (10)
@@ -9,9 +12,9 @@ def iterative_fib(n)
   previous = 0
   current = 1
   n.times do
-    num = current
+    sum = current
     current = current + previous
-    previous = num
+    previous = sum
   end
   return previous
 end
